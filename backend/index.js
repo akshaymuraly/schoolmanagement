@@ -9,6 +9,8 @@ const dbConnection = require("./config/mongoose.config");
 
 const userRouter = require("./modules/common/routers/user.router");
 const staffRouter = require("./modules/staff/routers/staff.router");
+const adminRouter = require("./modules/admin/router/admin.router");
+const librarianRouter = require("./modules/librarian/routers/library.router");
 
 // ----------------Middlewares------------------------------------------
 
@@ -19,6 +21,8 @@ app.use(Express.json());
 
 app.use("/api/staff", staffRouter);
 app.use("/api/user", userRouter);
+app.use("/api/admin", adminRouter);
+app.use("/api/librarian", librarianRouter);
 
 // ----------------Error handler----------------------------------------
 
